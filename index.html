@@ -1,1 +1,635 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Grand Suite | Luxury 1BHK Stay in New Town, Kolkata</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --gold: #d4af37;
+            --gold-light: #f3e5ab;
+            --gold-hover: #b89728;
+            --dark: #0f1115;
+            --card-bg: #181c24;
+            --card-border: rgba(212, 175, 55, 0.2);
+            --text-main: #f5f5f7;
+            --text-muted: #a0a5b5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 70px; /* Space for sticky mobile bar */
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(15, 17, 21, 0.82), rgba(15, 17, 21, 0.92)), 
+                        url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            padding: 90px 20px 70px;
+            text-align: center;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .badge-luxury {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: #ffffff;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            max-width: 680px;
+            margin: 0 auto 25px;
+            font-size: 1.05rem;
+        }
+
+        .price-tag {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 30px;
+        }
+
+        .price-tag span {
+            color: var(--gold);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        /* Instant Booking Card */
+        .booking-card {
+            background: var(--card-bg);
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 25px;
+            border-radius: 16px;
+            border: 1px solid var(--card-border);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            text-align: left;
+        }
+
+        .booking-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 15px;
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .booking-inputs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .input-box {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .input-box label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .input-box input, .input-box select {
+            background: #0b0d11;
+            border: 1px solid #303644;
+            color: #fff;
+            padding: 10px 12px;
+            border-radius: 8px;
+            outline: none;
+            font-size: 0.9rem;
+        }
+
+        .input-box input:focus, .input-box select:focus {
+            border-color: var(--gold);
+        }
+
+        .btn-direct-book {
+            width: 100%;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s ease;
+        }
+
+        .btn-direct-book:hover {
+            opacity: 0.92;
+            transform: translateY(-2px);
+        }
+
+        .direct-perks {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* Container & Titles */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .section-header p {
+            color: var(--gold);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-card {
+            background: var(--card-bg);
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid #232733;
+            transition: 0.3s ease;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-info {
+            padding: 15px;
+        }
+
+        .gallery-info h4 {
+            font-size: 1.05rem;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .gallery-info p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Amenities Grid */
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .amenity-card {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid #232733;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .amenity-card i {
+            font-size: 1.8rem;
+            color: var(--gold);
+        }
+
+        .amenity-card h4 {
+            font-size: 1rem;
+            margin-bottom: 4px;
+            color: #fff;
+        }
+
+        .amenity-card p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        /* Specs & Rules Table */
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #232733;
+        }
+
+        .specs-table td {
+            padding: 16px 20px;
+            border-bottom: 1px solid #232733;
+            font-size: 0.95rem;
+        }
+
+        .specs-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .specs-table td:first-child {
+            color: var(--gold);
+            font-weight: 600;
+            width: 35%;
+        }
+
+        /* Location Strip */
+        .landmarks-box {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid var(--card-border);
+        }
+
+        .landmarks-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            list-style: none;
+        }
+
+        .landmarks-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+        }
+
+        .landmarks-list li i {
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+
+        /* Reviews */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .review-card {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid #232733;
+        }
+
+        .stars {
+            color: #ffb703;
+            margin-bottom: 10px;
+        }
+
+        .review-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+
+        .review-card span {
+            font-weight: 600;
+            color: #fff;
+            font-size: 0.88rem;
+        }
+
+        /* Sticky Mobile Bottom Bar */
+        .sticky-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #11141a;
+            border-top: 1px solid var(--card-border);
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 999;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.5);
+        }
+
+        .sticky-price {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sticky-price span:first-child {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .sticky-price span:last-child {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .sticky-btns {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-sticky-wa {
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-sticky-airbnb {
+            background: #FF5A5F;
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid #232733;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.1rem; }
+            .hero { padding: 60px 15px 40px; }
+            .btn-sticky-airbnb { display: none; } /* Show only WhatsApp on very small screens */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Header -->
+    <header class="hero">
+        <div class="badge-luxury">Exclusive Serviced Apartment</div>
+        <h1>The Urban Oasis</h1>
+        <p>Ultra-luxury fully furnished 1BHK in New Town, Kolkata. Specially tailored for corporate professionals, hospital visits, and discerning travelers.</p>
+        
+        <div class="price-tag">
+            Starting from <span>₹2,499</span> / night
+        </div>
+
+        <!-- Instant WhatsApp Booking Engine -->
+        <div class="booking-card">
+            <h3><i class="fab fa-whatsapp"></i> Reserve Direct & Save 15% Platform Fees</h3>
+            <div class="booking-inputs">
+                <div class="input-box">
+                    <label>Check-in</label>
+                    <input type="date" id="checkin">
+                </div>
+                <div class="input-box">
+                    <label>Check-out</label>
+                    <input type="date" id="checkout">
+                </div>
+                <div class="input-box">
+                    <label>Guests</label>
+                    <select id="guests">
+                        <option value="1 Guest">1 Guest</option>
+                        <option value="2 Guests" selected>2 Guests</option>
+                        <option value="3 Guests">3 Guests</option>
+                    </select>
+                </div>
+            </div>
+            <button class="btn-direct-book" onclick="bookViaWhatsApp()">
+                <i class="fab fa-whatsapp"></i> Check Availability on WhatsApp
+            </button>
+            <div class="direct-perks">
+                ✓ No Brokerage &bull; ✓ Instant Host Confirmation &bull; ✓ Flexible Early Check-in Support
+            </div>
+        </div>
+    </header>
+
+    <!-- Visual Apartment Highlights -->
+    <div class="container">
+        <div class="section-header">
+            <p>A Glimpse Inside</p>
+            <h2>Apartment Spaces</h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=600&q=80" alt="Master Bedroom">
+                <div class="gallery-info">
+                    <h4>Master Suite</h4>
+                    <p>King-size orthopedic mattress with 400 TC Egyptian cotton linens.</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=600&q=80" alt="Living Room">
+                <div class="gallery-info">
+                    <h4>Designer Living Lounge</h4>
+                    <p>Warm ambient lighting, comfortable sofa-bed, and 55" 4K Smart TV.</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80" alt="Modular Kitchen">
+                <div class="gallery-info">
+                    <h4>Modular Kitchen</h4>
+                    <p>Induction, microwave, refrigerator, RO water purifier & cookware.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core Amenities -->
+    <div class="container" style="padding-top: 0;">
+        <div class="section-header">
+            <p>Everything You Need</p>
+            <h2>Premium Amenities</h2>
+        </div>
+        <div class="amenities-grid">
+            <div class="amenity-card">
+                <i class="fas fa-wifi"></i>
+                <div>
+                    <h4>300 Mbps Optical Fiber</h4>
+                    <p>Ultra-stable high-speed Wi-Fi, perfect for Zoom meetings & remote work.</p>
+                </div>
+            </div>
+            <div class="amenity-card">
+                <i class="fas fa-lock"></i>
+                <div>
+                    <h4>Keyless Smart Entry</h4>
+                    <p>Private passcode-enabled smart lock for 24/7 effortless self check-in.</p>
+                </div>
+            </div>
+            <div class="amenity-card">
+                <i class="fas fa-bolt"></i>
+                <div>
+                    <h4>100% Power Backup</h4>
+                    <p>Full DG generator backup covering AC, lights, Wi-Fi, and workstations.</p>
+                </div>
+            </div>
+            <div class="amenity-card">
+                <i class="fas fa-tv"></i>
+                <div>
+                    <h4>OTT Subscriptions</h4>
+                    <p>Pre-loaded Netflix, Amazon Prime Video & YouTube on 4K Smart TV.</p>
+                </div>
+            </div>
+            <div class="amenity-card">
+                <i class="fas fa-heart"></i>
+                <div>
+                    <h4>Couple Friendly</h4>
+                    <p>100% private, peaceful, and respectful environment for couples (18+ Valid ID).</p>
+                </div>
+            </div>
+            <div class="amenity-card">
+                <i class="fas fa-shield-alt"></i>
+                <div>
+                    <h4>Gated Security & Lift</h4>
+                    <p>24/7 security guard, CCTV in common areas, and multi-lift access.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Specifications Table -->
+    <div class="container" style="padding-top: 0;">
+        <div class="section-header">
+            <p>Details & Policies</p>
+            <h2>Stay Specifications</h2>
+        </div>
+        <table class="specs-table">
+            <tr>
+                <td>Max Capacity</td>
+                <td>Up to 3 Adults (1 King Bed + 1 Premium Foldable Sofa Bed)</td>
+            </tr>
+            <tr>
+                <td>Timings</td>
+                <td>Check-in: 01:00 PM | Check-out: 11:00 AM (Early check-in subject to availability)</td>
+            </tr>
+            <tr>
+                <td>Cleanliness</td>
+                <td>Deep-cleaned & sanitized before every check-in. Fresh towels & toiletries provided.</td>
+            </tr>
+            <tr>
+                <td>ID Requirement</td>
+                <td>Government photo ID (Aadhaar / Passport / Driving License) mandatory at check-in.</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Strategic Location -->
+    <div class="container" style="padding-top: 0;">
+        <div class="section-header">
+            <p>Location Advantage</p>
+            <h2>Prime Connectivity in New Town</h2>
+        </div>
+        <div class="landmarks-box">
+            <ul class="landmarks-list">
+                <li><i class="fas fa-plane-departure"></i> NSCBI Airport: 15–20 Mins</li>
+                <li><i class="fas fa-laptop-code"></i> DLF / Candor / IT Parks: 5–10 Mins</li>
+                <li><i class="fas fa-hospital-alt"></i> Tata Medical Center: 5 Mins</li>
+                <li><i class="fas fa-tree"></i> Eco Park & Biswa Bangla Gate: 8 Mins</li>
+                <li><i class="fas fa-shopping-bag"></i> Axis Mall & Central Mall: 8 Mins</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Guest Reviews -->
+    <div class="container" style="padding-top: 0;">
+        <div class="section-header">
+            <p>Guest Experiences</p>
+            <h2>5-Star Rated Stay</h2>
+        </div>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p>"Best stay in New Town! The flat looks identical to the pictures. Super fast Wi-Fi helped me work smoothly, and self check-in was seamless."</p>
+                <span>— Rohan M. (Corporate Tech Lead)</span>
+            </div>
+            <div class="review-card">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p>"Very peaceful and sparkling clean. The kitchen was equipped with everything needed for tea and breakfast. Tata Medical Center was just 5 minutes away."</p>
+                <span>— Ananya Sen (Hospital Transit Guest)</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Mobile Bottom Bar -->
+    <div class="sticky-bar">
+        <div class="sticky-price">
+            <span>Special Rate</span>
+            <span>₹2,499 / night</span>
+        </div>
+        <div class="sticky-btns">
+            <!-- Replace 91 6204576957 with your phone number -->
+            <a href="h
